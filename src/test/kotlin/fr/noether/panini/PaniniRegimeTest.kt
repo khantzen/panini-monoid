@@ -22,5 +22,15 @@ class PaniniRegimeTest {
 
         assertThat(panini.regime()).isEqualTo(Regime.Vegetarian)
     }
+
+    @Test
+    internal fun `panini containing vegan, vegetarian and pescetarian ingredients should be pescetarian`() {
+        val panini = Panini.empty()
+            .add(Ingredient(Regime.Pescetarian))
+            .add(Ingredient(Regime.Vegetarian))
+
+        assertThat(panini.regime()).isEqualTo(Regime.Pescetarian)
+
+    }
 }
 

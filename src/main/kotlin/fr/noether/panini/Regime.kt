@@ -4,7 +4,8 @@ import javax.print.attribute.standard.MediaSize.Other
 
 enum class Regime {
     Vegan,
-    Vegetarian;
+    Vegetarian,
+    Pescetarian;
 
     fun combineWith(other: Regime): Regime {
         if (this == Vegan) {

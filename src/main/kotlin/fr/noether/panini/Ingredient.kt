@@ -9,7 +9,6 @@ data class Ingredient(val regime: Regime) {
         return Ingredient(
             regime.combineWith(other.regime)
         )
-
     }
 
     companion object {
