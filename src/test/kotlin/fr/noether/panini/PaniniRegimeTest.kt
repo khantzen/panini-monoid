@@ -1,12 +1,17 @@
 package fr.noether.panini
 
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class PaniniRegimeTest {
 
     @Test
     internal fun `panini containing only one vegan ingredient should be vegan`() {
-        Assertions.assertThat(1+1).isEqualTo(2)
+        val salad = Ingredient.vegan()
+        val panini = Panini.empty()
+            .addIngredient(salad)
+
+        assertThat(panini.isVegan)
     }
 }
+
