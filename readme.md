@@ -11,7 +11,7 @@ Build the project
 gradle clean build
 ```
 
-If you edit and your think test will be green just put a gamble on it
+If you edit and think your test will be green just put a gamble on it
 
 ```bash
 ./git-gamble.AppImage --pass -- gradle clean build
