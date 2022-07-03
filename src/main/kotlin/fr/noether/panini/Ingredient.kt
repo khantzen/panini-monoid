@@ -5,6 +5,13 @@ data class Ingredient(val regime: Regime) {
         return regime == Regime.Vegetarian
     }
 
+    fun combineWith(other: Ingredient): Ingredient {
+        return Ingredient(
+            regime.combineWith(other.regime)
+        )
+
+    }
+
     companion object {
         fun vegan(): Ingredient {
             return Ingredient(Regime.Vegan)
@@ -12,6 +19,10 @@ data class Ingredient(val regime: Regime) {
 
         fun vegetarian(): Ingredient {
             return Ingredient(Regime.Vegetarian)
+        }
+
+        fun neutral(): Ingredient {
+            return Ingredient(Regime.Vegan)
         }
     }
 

@@ -9,19 +9,18 @@ class PaniniRegimeTest {
     internal fun `panini containing only one vegan ingredient should be vegan`() {
         val bread = Ingredient.vegan()
         val panini = Panini.empty()
-            .addIngredient(bread)
+            .add(bread)
 
-        assertThat(panini.isVegan).isTrue
+        assertThat(panini.regime()).isEqualTo(Regime.Vegan)
     }
 
     @Test
     internal fun `panini containing only one vegetarian ingredient should be vegetarian`() {
         val cheese = Ingredient.vegetarian()
         val panini = Panini.empty()
-            .addIngredient(cheese)
+            .add(cheese)
 
-        assertThat(panini.isVegetarian).isTrue
-        assertThat(panini.isVegan).isFalse
+        assertThat(panini.regime()).isEqualTo(Regime.Vegetarian)
     }
 }
 
