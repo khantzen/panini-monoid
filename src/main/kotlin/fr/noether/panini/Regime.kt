@@ -2,16 +2,16 @@ package fr.noether.panini
 
 import javax.print.attribute.standard.MediaSize.Other
 
-enum class Regime {
-    Vegan,
-    Vegetarian,
-    Pescetarian;
+enum class Regime(val order: Int) {
+    Vegan(order = 0),
+    Vegetarian(order = 1),
+    Pescetarian(order = 2);
 
-    fun combineWith(other: Regime): Regime {
-        if (this == Vegan) {
-            return other;
+    fun combineWith(other: Regime) =
+        if (this.order > other.order) {
+            this
+        } else {
+            other
         }
-        return this;
-    }
 
 }
